@@ -8,6 +8,6 @@ app.get("/", (_, res: any) => res.send({ response: "order microservice api is re
 app.use(authenticateRequest); // apply auth middleware to all routes below this line
 
 // ✅ Protected routes
-app.use("/order", orderRouter);
+app.use("/v1/order", orderRouter);
 
 export default app;
