@@ -17,7 +17,7 @@ const saveOrder = async (data: OrderType): Promise<boolean> => {
     }
 }
 
-const findOneOrderById = async (orderId: number): Promise<OrderType | null> => {
+const findOneOrderById = async (orderId: string): Promise<OrderType | null> => {
     try {
         return await orderRepository.findOneOrderById(orderId);
     } catch (error: any) {
@@ -25,7 +25,7 @@ const findOneOrderById = async (orderId: number): Promise<OrderType | null> => {
     }
 }
 
-const confirmOrder = async (orderId: number): Promise<boolean> => {
+const confirmOrder = async (orderId: string): Promise<boolean> => {
     try {
         return await orderRepository.confirmOrder(orderId);
     } catch (error: any) {
@@ -33,7 +33,7 @@ const confirmOrder = async (orderId: number): Promise<boolean> => {
     }
 }
 
-const cancelOrder = async (orderId: number): Promise<boolean> => {
+const cancelOrder = async (orderId: string): Promise<boolean> => {
     try {
         return await orderRepository.cancelOrder(orderId);
     } catch (error: any) {
@@ -41,7 +41,7 @@ const cancelOrder = async (orderId: number): Promise<boolean> => {
     }
 }
 
-const findAllOrdersByCustomerId = async (customerId: number): Promise<OrderType[]> => {
+const findAllOrdersByCustomerId = async (customerId: string): Promise<OrderType[]> => {
     try {
         return await orderRepository.findAllOrdersByCustomerId(customerId);
     } catch (error: any) {

@@ -25,7 +25,7 @@ const saveOrder: RequestHandler = async (req, res) => {
 const findOneOrderById: RequestHandler = async (req, res) => {
   try {
     const { orderId } = req.params;
-    const result = await orderService.findOneOrderById(Number(orderId));
+    const result = await orderService.findOneOrderById(orderId);
     sendResponse({request: req, response: res, statusCode: 200, success: true, message: "find one order by id successful", data: result});
   } catch (error: any) {
     sendResponse({request: req, response: res, statusCode: 500, success: false, message: error.message || error, data: null});
@@ -35,7 +35,7 @@ const findOneOrderById: RequestHandler = async (req, res) => {
 const confirmOrder: RequestHandler = async (req, res) => {
   try {
     const { orderId } = req.params;
-    const result = await orderService.confirmOrder(Number(orderId));
+    const result = await orderService.confirmOrder(orderId);
     sendResponse({request: req, response: res, statusCode: 200, success: true, message: "confirm order successful", data: result});
   } catch (error: any) {
     sendResponse({request: req, response: res, statusCode: 500, success: false, message: error.message || error, data: null});
@@ -45,7 +45,7 @@ const confirmOrder: RequestHandler = async (req, res) => {
 const cancelOrder: RequestHandler = async (req, res) => {
   try {
     const { orderId } = req.params;
-    const result = await orderService.cancelOrder(Number(orderId));
+    const result = await orderService.cancelOrder(orderId);
     sendResponse({request: req, response: res, statusCode: 200, success: true, message: "cancel order successful", data: result});
   } catch (error: any) {
     sendResponse({request: req, response: res, statusCode: 500, success: false, message: error.message || error, data: null});
@@ -55,7 +55,7 @@ const cancelOrder: RequestHandler = async (req, res) => {
 const findAllOrdersByCustomerId: RequestHandler = async (req, res) => {
   try {
     const { customerId } = req.params;
-    const result = await orderService.findAllOrdersByCustomerId(Number(customerId));
+    const result = await orderService.findAllOrdersByCustomerId(customerId);
     sendResponse({request: req, response: res, statusCode: 200, success: true, message: "find all orders by customer id successful", data: result});
   } catch (error: any) {
     sendResponse({request: req, response: res, statusCode: 500, success: false, message: error.message || error, data: null});

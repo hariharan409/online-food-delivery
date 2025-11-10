@@ -19,7 +19,7 @@ const saveOrder = async(data: OrderType): Promise<boolean> => {
     }
 };
 
-const findOneOrderById = async(orderId: number): Promise<OrderType | null> => {
+const findOneOrderById = async(orderId: string): Promise<OrderType | null> => {
     try {
         const order = await db.Order.findByPk(orderId);
         return order;
@@ -28,7 +28,7 @@ const findOneOrderById = async(orderId: number): Promise<OrderType | null> => {
     }
 };
 
-const confirmOrder = async(orderId: number): Promise<boolean> => {
+const confirmOrder = async(orderId: string): Promise<boolean> => {
     try {
         const order = await db.Order.findByPk(orderId);
         if (!order) throw new Error("Order not found");
@@ -40,7 +40,7 @@ const confirmOrder = async(orderId: number): Promise<boolean> => {
     }
 }
 
-const cancelOrder = async(orderId: number): Promise<boolean> => {
+const cancelOrder = async(orderId: string): Promise<boolean> => {
     try {
         const order = await db.Order.findByPk(orderId);
         if (!order) throw new Error("Order not found");
@@ -52,7 +52,7 @@ const cancelOrder = async(orderId: number): Promise<boolean> => {
     }
 }
 
-const findAllOrdersByCustomerId = async(customerId: number): Promise<OrderType[]> => {
+const findAllOrdersByCustomerId = async(customerId: string): Promise<OrderType[]> => {
     try {
         const orderList = await db.Order.findAll({ where: { customer_id: customerId } });
         return orderList;

@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 7
+    },
+    "auditLog": "C:\\Users\\Harihara.D-c\\hari\\personal-projects\\online-food-delivery\\logs\\order-service\\.8040d0ef0c667ca852e36f10fdbe35b8ab55ed23-audit.json",
+    "files": [
+        {
+            "date": 1762695567785,
+            "name": "C:\\Users\\Harihara.D-c\\hari\\personal-projects\\online-food-delivery\\logs\\order-service\\2025-11-09.log",
+            "hash": "26d5ae40288f20e1c44a71c4dfb069d6b770b37cd7984dfed7cbe2856a6c7f29"
+        },
+        {
+            "date": 1762785703398,
+            "name": "C:\\Users\\Harihara.D-c\\hari\\personal-projects\\online-food-delivery\\logs\\order-service\\2025-11-10.log",
+            "hash": "5161f8b6af954be2f18e953f62860a5867d713d7f956a471f3b4adb6b5d0f097"
+        }
+    ],
+    "hashType": "sha256"
+}
